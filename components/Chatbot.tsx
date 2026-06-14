@@ -43,7 +43,7 @@ const KB: { k: string[]; a: string }[] = [
   },
   {
     k: ['team', 'who are you', 'people', 'staff', 'employee'],
-    a: 'Sea Grace is led by <b>Manoj Padmanabha</b> (Founder & CEO), with co-founders <b>Vishal</b> (Consultant), <b>Vinith</b> (Business Lead) and <b>Arvind</b>, plus <b>Adithya</b> (CFO & Marketing) and the engineering crew: Greeshma, Durgesh and Srajanya. You can meet the team on the <b>About Us</b> page.',
+    a: 'Sea Grace is led by <b>Manoj Padmanabha</b> (Founder & CEO), with <b>Vinith</b> (Business Lead & Co-founder), <b>Arvind</b> (Co-founder) and <b>Vishal</b> (Senior Consultant), plus <b>Adithya</b> (CFO & Marketing) and the engineering crew: Greeshma, Durgesh, Srajanya and Kamal. You can meet the team on the <b>About Us</b> page.',
   },
   {
     k: ['ceo', 'manoj', 'leader', 'leadership'],

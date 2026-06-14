@@ -636,6 +636,10 @@ image-slot::part(empty) { gap: 9px; }
   object-position: center 12%;
   transform: scale(1.12);
 }
+.member__ph .media-img[alt="Kamal"], .pmember__ph .media-img[alt="Kamal"] {
+  object-position: center 13%;
+  transform: scale(1.08);
+}
 .member__ph .media-img[alt="Arvind"], .pmember__ph .media-img[alt="Arvind"],
 .member__ph .media-img[alt="Durgesh"], .pmember__ph .media-img[alt="Durgesh"],
 .member__ph .media-img[alt="Srajanya"], .pmember__ph .media-img[alt="Srajanya"] {

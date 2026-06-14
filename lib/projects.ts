@@ -72,7 +72,7 @@ export const projects: Project[] = [
     crew: [
       { name: 'Manoj Padmanabha', role: 'Founder & CEO · Product & AI', did: 'Led product direction and the AI vision — recommendations, embeddings and the path to semantic search.', chips: ['Product', 'AI/ML', 'Vector search'], photo: '/images/team/Manoj.png' },
       { name: 'Arvind', role: 'Co-founder · Backend', did: 'Built the FastAPI backend and the PostGIS data layer — POI ingestion, spatial queries and APIs.', chips: ['FastAPI', 'PostGIS', 'Data'], photo: '/images/team/arvind.jpeg' },
-      { name: 'Srajanya', role: 'Associate Engineer · Frontend', did: 'Crafted the React frontend — the discovery experience, map interactions and a clean, fast UI.', chips: ['React', 'UI', 'Maps'], photo: '/images/team/Srajanya.png' },
+      { name: 'Srajanya', role: 'Associate Software Developer · Frontend', did: 'Crafted the React frontend — the discovery experience, map interactions and a clean, fast UI.', chips: ['React', 'UI', 'Maps'], photo: '/images/team/Srajanya.png' },
       { name: 'Durgesh', role: 'Data Engineer', did: 'Built the POI data pipelines — ingesting OpenStreetMap, GeoNames and tourism datasets into PostGIS.', chips: ['Data pipelines', 'PostGIS', 'ETL'], photo: '/images/team/durgesh.jpeg' },
     ],
   },
@@ -115,9 +115,10 @@ export const projects: Project[] = [
     ],
     crew: [
       { name: 'Manoj Padmanabha', role: 'Founder & CEO · Product', did: 'Set the product vision and led the build — from tournament model to the realtime experience.', chips: ['Product', 'Strategy', 'Realtime'], photo: '/images/team/Manoj.png' },
-      { name: 'Vishal', role: 'Consultant & Co-founder · Architecture', did: 'Advised on system architecture and the realtime design — scaling live scoring and events.', chips: ['Architecture', 'WebSockets', 'Scaling'], photo: '/images/team/VIshal.png' },
       { name: 'Arvind', role: 'Co-founder · Backend', did: 'Integrated Redis for events and caching, and built core Spring Boot services powering the platform.', chips: ['Redis', 'Spring Boot', 'Events'], photo: '/images/team/arvind.jpeg' },
-      { name: 'Srajanya', role: 'Associate Software Engineer · Frontend', did: 'Built the Next.js frontend — live match views, leaderboards and tournament brackets.', chips: ['Next.js', 'UI', 'Realtime UI'], photo: '/images/team/Srajanya.png' },
+      { name: 'Srajanya', role: 'Associate Software Developer · Frontend', did: 'Built the Next.js frontend — live match views, leaderboards and tournament brackets.', chips: ['Next.js', 'UI', 'Realtime UI'], photo: '/images/team/Srajanya.png' },
+      { name: 'Kamal', role: 'QA Engineer', did: 'Tested the live scoring and realtime flows under load — keeping match-day releases solid.', chips: ['QA', 'Load testing', 'Realtime'], photo: '/images/team/kamal.jpeg' },
+      { name: 'Vishal', role: 'Senior Consultant', did: 'Advised on system architecture and the realtime design — scaling live scoring and events.', chips: ['Architecture', 'WebSockets', 'Scaling'] },
     ],
   },
 ];
