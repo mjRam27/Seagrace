@@ -17,8 +17,8 @@ export default function Work() {
           {projects.map((p, i) => (
             <Link key={p.slug} className="proj" href={`/work/${p.slug}/`} data-reveal data-delay={i % 2 === 1 ? '1' : undefined} data-screen-label={`Card ${p.name}`}>
               <div className="proj__media">
-                <span className="chip proj__live"><span className="dot live"></span> Live</span>
-                <Media label={`${p.name} screenshot`} />
+                <span className="chip proj__live"><span className={p.status === 'Upcoming' ? 'dot' : 'dot live'}></span> {p.status || 'Live'}</span>
+                <Media src={p.cardImage} label={`${p.name} screenshot`} />
               </div>
               <div className="proj__body">
                 <div className="top">

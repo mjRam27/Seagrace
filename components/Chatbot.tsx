@@ -99,15 +99,23 @@ const KB: { k: string[]; a: string }[] = [
   },
   {
     k: ['explorix', 'travel'],
-    a: '<b>Explorix</b> is an AI-powered travel discovery platform that helps people find places, attractions, restaurants and experiences tailored to their interests using location intelligence and personalized recommendations.\n\nStack: React, FastAPI, PostgreSQL + PostGIS and vector search.',
+    a: '<b>Explorix</b> is an AI-powered mobile travel platform for feeds, maps, uploads, nearby place discovery and a conversational travel assistant.\n\nStack: React Native, Expo, FastAPI, PostgreSQL + PostGIS, MongoDB for AI memory, Llama 3.2, RAG, LoRA, JWT auth and Google SSO.',
   },
   {
     k: ['pickelton', 'sport', 'pickle', 'pickleball', 'badminton', 'tournament', 'scoring'],
-    a: '<b>Pickelton</b> is a real-time sports community and tournament platform for Pickleball and Badminton, with clubs, tournaments, live scoring, real-time leaderboards and player analytics.\n\nStack: Next.js, Spring Boot, Supabase, Redis and WebSockets.',
+    a: '<b>Pickelton</b> is an ongoing real-time sports community and tournament platform for Pickleball and Badminton, with a React Native mobile app, Next.js web app, live scoring, leaderboards, analytics and live streaming.\n\nStack: React Native, Next.js, Java 21, Golang for live streaming, PostgreSQL, JWT auth, Redis cache, Redis pub/sub, WebSockets, WebRTC and HLS.',
+  },
+  {
+    k: ['tradex', 'trading', 'fintech', 'tradingview', 'broker', 'market data'],
+    a: '<b>Tradex</b> is an upcoming AI-powered trading automation platform. It connects TradingView Pine Script strategies with a FastAPI execution engine, market data services, broker APIs, portfolio analytics and risk management.\n\nStack: React, TypeScript, Tailwind CSS, FastAPI, Python, PostgreSQL, Redis, TradingView Pine Script, Scikit-Learn, XGBoost, PyTorch and Google Cloud Platform.',
+  },
+  {
+    k: ['ascenjo', 'career', 'job search', 'resume', 'cover letter', 'ats', 'job application'],
+    a: '<b>Ascenjo</b> is an upcoming AI career operating system for job discovery, semantic matching, ATS-optimized resumes, cover letters, browser-assisted applications and application tracking.\n\nStack: React, TypeScript, Tailwind CSS, ShadCN, NestJS, Prisma, PostgreSQL + pgvector, Redis, Playwright, Chromium, AWS ECS Fargate, S3, CloudFront, Cognito and SES.',
   },
   {
     k: ['project', 'work', 'portfolio', 'case study', 'case studies', 'built'],
-    a: 'We have shipped products like <b>Explorix</b> for AI travel discovery and <b>Pickelton</b> for real-time sports tournaments. Visit the Work section to read the case studies.',
+    a: 'We have built products like <b>Explorix</b> for AI travel discovery and <b>Pickelton</b> for real-time sports tournaments, with <b>Tradex</b> and <b>Ascenjo</b> upcoming in AI-powered automation. Visit the Work section to read the case studies.',
   },
   {
     k: ['join and learn', 'join learn', 'internship program', 'learning program', 'join program'],

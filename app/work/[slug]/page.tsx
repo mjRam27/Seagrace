@@ -37,7 +37,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <div className="wrap" style={{ position: 'relative', zIndex: 2 }}>
           <Link className="back-link" href="/#work"><span className="a">←</span> All work</Link>
           <div className="proj-hero__top">
-            <span className="chip"><span className="dot live"></span> Live</span>
+            <span className="chip"><span className={p.status === 'Upcoming' ? 'dot' : 'dot live'}></span> {p.status || 'Live'}</span>
             <span className="chip">{p.category}</span>
             <span className="chip">{p.year}</span>
           </div>
@@ -57,7 +57,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <div className="wrap">
           <div className="proj-shot" data-reveal>
             <span className="chip tag">Product overview</span>
-            <Media label={`${p.name} — hero screenshot`} />
+            <Media src={p.heroImage} label={`${p.name} hero screenshot`} />
           </div>
         </div>
       </section>
@@ -133,9 +133,15 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <div className="wrap">
           <div className="sec-head"><div className="sh-left"><div className="eyebrow" data-reveal>Screens</div><h2 className="h-sec" data-reveal data-delay="1" style={{ marginTop: 20 }}>A look inside.</h2></div></div>
           <div className="gallery">
-            <div className="g wide" data-reveal><Media label="Primary view" /></div>
-            <div className="g" data-reveal><Media label="Detail" /></div>
-            <div className="g" data-reveal data-delay="1"><Media label="Secondary view" /></div>
+            {(p.galleryImages || [
+              { src: undefined, label: 'Primary view' },
+              { src: undefined, label: 'Detail' },
+              { src: undefined, label: 'Secondary view' },
+            ]).map((image, i) => (
+              <div className={i === 0 ? 'g wide' : 'g'} data-reveal data-delay={i > 1 ? '1' : undefined} key={image.label}>
+                <Media src={image.src} label={image.label} alt={image.label} />
+              </div>
+            ))}
           </div>
         </div>
       </section>

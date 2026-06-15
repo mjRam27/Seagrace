@@ -390,6 +390,17 @@ html.capthru [data-reveal], html.capthru .reveal-clip > span { opacity: 1 !impor
 /* ---------- TEAM ---------- */
 .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
 .member { display: flex; flex-direction: column; gap: 14px; }
+.member--button {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+.member--button:hover .member__ph { border-color: #fff; }
 .member__ph { position: relative; aspect-ratio: 3/4; border-radius: 16px; overflow: hidden; border: 1px solid var(--line);
   background: #0d0d0f; transition: border-color .35s; }
 .member:hover .member__ph { border-color: var(--line-2); }
@@ -399,6 +410,53 @@ html.capthru [data-reveal], html.capthru .reveal-clip > span { opacity: 1 !impor
 .member h4 { font-family: var(--disp); font-weight: 700; font-size: 19px; letter-spacing: -0.01em; line-height: 1.15; }
 .member .rl { font-family: var(--mono); font-size: 12.5px; color: var(--fg-mute); letter-spacing: .04em; margin-top: 5px; }
 .member .bio { color: var(--fg-soft); font-size: 14px; line-height: 1.55; }
+.member__hint { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--fg-mute); }
+
+.profile-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(0,0,0,.72);
+  backdrop-filter: blur(18px);
+  display: grid;
+  place-items: center;
+  padding: var(--pad);
+}
+.profile-modal__card {
+  width: min(1040px, 100%);
+  max-height: min(840px, calc(100vh - 40px));
+  overflow: auto;
+  position: relative;
+  border: 1px solid var(--line-2);
+  border-radius: 22px;
+  background: var(--card);
+  box-shadow: 0 30px 90px rgba(0,0,0,.45);
+}
+.profile-modal__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--line-2);
+  background: rgba(255,255,255,.04);
+  color: var(--fg);
+  cursor: pointer;
+  font-size: 16px;
+}
+.profile-modal__grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 0; }
+.profile-modal__photo { position: relative; min-height: 100%; background: #0d0d0f; border-right: 1px solid var(--line); }
+.profile-modal__photo .media-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+.profile-modal__body { padding: clamp(30px,4vw,54px); }
+.profile-modal__body h3 { font-size: clamp(34px,5vw,64px); margin: 20px 0 18px; }
+.profile-modal__section { border-top: 1px solid var(--line); margin-top: 24px; padding-top: 20px; }
+.profile-modal__section h4 { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 10px; }
+.profile-modal__section p, .profile-modal__section li { color: var(--fg-soft); font-size: 15px; line-height: 1.65; }
+.profile-modal__section ul { list-style: none; display: grid; gap: 10px; }
+.profile-modal__section li { position: relative; padding-left: 18px; }
+.profile-modal__section li::before { content: ''; position: absolute; left: 0; top: .72em; width: 6px; height: 6px; border-radius: 50%; background: var(--fg-mute); }
 
 /* ---------- TESTIMONIALS ---------- */
 .tst { background: var(--paper); color: var(--ink); }
@@ -493,6 +551,8 @@ image-slot::part(empty) { gap: 9px; }
 @media (max-width: 1000px) {
   .vision-grid { grid-template-columns: 1fr; }
   .about-grid, .ceo, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
+  .profile-modal__grid { grid-template-columns: 1fr; }
+  .profile-modal__photo { min-height: 420px; border-right: 0; border-bottom: 1px solid var(--line); }
   .services, .proj-grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr 1fr; }
   .culture-grid { grid-template-columns: 1fr 1fr; }
@@ -581,7 +641,7 @@ image-slot::part(empty) { gap: 9px; }
 .pmember { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--bg-2);
   transition: border-color .35s, transform .4s var(--ease); }
 .pmember:hover { border-color: var(--line-2); transform: translateY(-3px); }
-.pmember__ph { aspect-ratio: 5/4; position: relative; border-bottom: 1px solid var(--line);
+.pmember__ph { aspect-ratio: 5/4; position: relative; overflow: hidden; border-bottom: 1px solid var(--line);
   background-color: #0d0d0f;
   background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0 2px, transparent 2px 12px); }
 .pmember__ph image-slot { width: 100%; height: 100%; }
@@ -655,6 +715,10 @@ image-slot::part(empty) { gap: 9px; }
 }
 .ceo__photo .media-img, .member__ph .media-img, .proj__media .media-img,
 .proj-shot .media-img, .gallery .g .media-img, .pmember__ph .media-img { position:absolute; inset:0; }
+.proj__media .media-img, .proj-shot .media-img, .gallery .g .media-img {
+  object-fit: contain;
+  background: #0d0d0f;
+}
 
 /* ============================================================
    Grace chatbot widget (ported from chatbot.js)
