@@ -2,12 +2,19 @@
 
 import { useState } from 'react';
 
-type Mode = 'client' | 'join';
+/*
+ * Client contact mode is intentionally commented out so the application behaves
+ * as if the client option does not exist, while keeping the old code restorable.
+ *
+ * type Mode = 'client' | 'join';
+ */
 
 const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID || '';
 
 export default function ContactForm() {
-  const [mode, setMode] = useState<Mode>('client');
+  /*
+   * const [mode, setMode] = useState<Mode>('client');
+   */
   const [errors, setErrors] = useState<Record<string, boolean>>({});
   const [sent, setSent] = useState(false);
   const [sentName, setSentName] = useState('there');
@@ -66,7 +73,7 @@ export default function ContactForm() {
           <div className="ok">✓</div>
           <h3>Thanks, {sentName}!</h3>
           <p>
-            Your {mode === 'client' ? 'project brief' : 'application'} is in. A real human at Seagrace will get back to you within 1-2 days.
+            Thank you for your interest in joining Seagrace. We&apos;ll review your application and get back to you soon.
             {!FORMSPREE_ID && <span style={{ opacity: 0.6 }}> (Demo form - set NEXT_PUBLIC_FORMSPREE_ID to deliver messages.)</span>}
           </p>
         </div>
@@ -77,6 +84,12 @@ export default function ContactForm() {
   return (
     <div className="form-card">
       <form id="contactForm" noValidate onSubmit={onSubmit}>
+        <input type="hidden" name="inquiry_type" value="Join the initiative" />
+        <div className="form-heading">
+          <span className="em">01</span>
+          <h3>I want to join</h3>
+        </div>
+        {/*
         <input type="hidden" name="inquiry_type" value={mode === 'client' ? 'Client - project' : 'Join the team'} />
         <div className="seg">
           <button type="button" className={mode === 'client' ? 'active' : ''} onClick={() => setMode('client')}>
@@ -86,6 +99,7 @@ export default function ContactForm() {
             <span className="em">02</span> I want to join
           </button>
         </div>
+        */}
 
         <div className="field row2">
           <div className={'field' + err('name')} style={{ margin: 0 }}>
@@ -95,11 +109,12 @@ export default function ContactForm() {
           </div>
           <div className={'field' + err('email')} style={{ margin: 0 }}>
             <label>Email</label>
-            <input name="email" type="email" placeholder="jane@company.com" required />
+            <input name="email" type="email" placeholder="jane@example.com" required />
             <div className="msg">Enter a valid email</div>
           </div>
         </div>
 
+        {/*
         {mode === 'client' && (
           <div className="dyn-fields show">
             <div className="field">
@@ -113,7 +128,25 @@ export default function ContactForm() {
             </div>
           </div>
         )}
+        */}
 
+        <div className="dyn-fields show">
+          <div className="field">
+            <label>Current role / university</label>
+            <input name="current_role" type="text" placeholder="Computer Science Student" />
+          </div>
+          <div className={'field' + err('message')}>
+            <label>Tell us about yourself</label>
+            <textarea
+              name="message"
+              placeholder="Tell us about your background, interests, technologies you enjoy, projects you've built, and why you'd like to join Seagrace."
+              required
+            ></textarea>
+            <div className="msg">Tell us a little about yourself</div>
+          </div>
+        </div>
+
+        {/*
         {mode === 'join' && (
           <div className="dyn-fields show">
             <div className="field row2">
@@ -136,11 +169,15 @@ export default function ContactForm() {
             </div>
           </div>
         )}
+        */}
 
         <div className="form-foot">
           <span className="note">No spam. We reply within 1-2 days.</span>
           <button className="btn btn--lg" type="submit" data-magnetic disabled={submitting}>
+            {/*
             <span>{submitting ? 'Sending...' : mode === 'client' ? 'Send project brief' : 'Send application'}</span> <span className="arr">-&gt;</span>
+            */}
+            <span>{submitting ? 'Sending...' : 'Apply to Join'}</span> <span className="arr">-&gt;</span>
           </button>
         </div>
       </form>

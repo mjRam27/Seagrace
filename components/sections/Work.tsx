@@ -4,20 +4,20 @@ import Media from '@/components/Media';
 
 export default function Work() {
   return (
-    <section className="section" id="work" data-screen-label="Work">
+    <section className="section" id="work" data-screen-label="Engineering Projects">
       <div className="wrap">
         <div className="sec-head">
           <div className="sh-left">
-            <div className="eyebrow" data-reveal>04 — Selected work</div>
-            <h2 className="h-sec" data-reveal data-delay="1" style={{ marginTop: 22 }}>Things we&apos;ve<br />designed &amp; built.</h2>
+            <div className="eyebrow" data-reveal>04 - Collaborative work</div>
+            <h2 className="h-sec" data-reveal data-delay="1" style={{ marginTop: 22 }}>Engineering<br />projects.</h2>
           </div>
-          <p className="lead" data-reveal data-delay="2" style={{ maxWidth: 360 }}>Open any project for the full case study — the live product, the stack, and the people who built it.</p>
+          <p className="lead" data-reveal data-delay="2" style={{ maxWidth: 360 }}>Internal engineering projects where contributors gain practical experience by building production-style software using modern technologies.</p>
         </div>
         <div className="proj-grid">
           {projects.map((p, i) => (
             <Link key={p.slug} className="proj" href={`/work/${p.slug}/`} data-reveal data-delay={i % 2 === 1 ? '1' : undefined} data-screen-label={`Card ${p.name}`}>
               <div className="proj__media">
-                <span className="chip proj__live"><span className={p.status === 'Upcoming' ? 'dot' : 'dot live'}></span> {p.status || 'Live'}</span>
+                <span className="chip proj__live"><span className={p.status === 'Upcoming' ? 'dot' : 'dot live'}></span> {p.status || 'Active'}</span>
                 <Media src={p.cardImage} label={`${p.name} screenshot`} />
               </div>
               <div className="proj__body">
@@ -30,7 +30,7 @@ export default function Work() {
                   {p.cardStack.map((s) => <span key={s}>{s}</span>)}
                 </div>
                 <div className="proj__foot">
-                  <span className="open">Read case study <span className="arr">→</span></span>
+                  <span className="open">Read project study <span className="arr">-&gt;</span></span>
                 </div>
               </div>
             </Link>
@@ -39,16 +39,16 @@ export default function Work() {
           <div className="proj placeholder" data-reveal data-screen-label="Card Placeholder 3">
             <div className="pl-in">
               <span className="chip"><span className="dot"></span> In progress</span>
-              <h3>Your next project</h3>
-              <p>This slot is reserved for the work we&apos;ll build with you. Replace it with a real case study anytime.</p>
-              <a className="btn btn--ghost btn--sm" href="#contact">Start a project →</a>
+              <h3>Future Community Projects</h3>
+              <p>New collaborative engineering projects will be added as our community grows.</p>
+              <a className="btn btn--ghost btn--sm" href="#contact">Join the initiative -&gt;</a>
             </div>
           </div>
           <div className="proj placeholder" data-reveal data-delay="1" data-screen-label="Card Placeholder 4">
             <div className="pl-in">
               <span className="chip"><span className="dot"></span> Coming soon</span>
-              <h3>More on the way</h3>
-              <p>We&apos;re shipping continuously. New case studies land here as they go live.</p>
+              <h3>More learning paths</h3>
+              <p>New project studies will appear here as contributors explore more engineering domains together.</p>
             </div>
           </div>
         </div>

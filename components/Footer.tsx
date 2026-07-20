@@ -10,25 +10,28 @@ export default function Footer() {
               <span className="mark">S</span> Seagrace
             </div>
             <div className="big">
-              You imagine it.
+              Learn. Build.
               <br />
-              We build it.
+              Grow Together.
             </div>
+            <p>
+              Seagrace is a community-driven software engineering initiative helping aspiring developers gain practical experience through collaborative engineering projects, mentorship, and modern development practices.
+            </p>
             <a className="btn btn--sm" href="/contact/" data-magnetic>
-              Start a project <span className="arr">-&gt;</span>
+              Join the Initiative <span className="arr">-&gt;</span>
             </a>
           </div>
           <div>
-            <h4>Studio</h4>
+            <h4>Initiative</h4>
             <ul>
               <li><a href="/about/">About Us</a></li>
               <li><a href="/about/#culture">Culture</a></li>
               <li><a href="/about/#team">Team</a></li>
-              <li><a href="/join/">Careers</a></li>
+              <li><a href="/join/">Join</a></li>
             </ul>
           </div>
           <div>
-            <h4>Work</h4>
+            <h4>Projects</h4>
             <ul>
               <li><Link href="/work/explorix/">Explorix</Link></li>
               <li><Link href="/work/pickelton/">Pickelton</Link></li>
@@ -36,19 +39,19 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Services</h4>
+            <h4>Domains</h4>
             <ul>
-              <li><a href="/#services">Web apps</a></li>
-              <li><a href="/#services">Mobile</a></li>
-              <li><a href="/#services">AI &amp; ML</a></li>
-              <li><a href="/#services">Realtime</a></li>
+              <li><a href="/#services">Backend Engineering</a></li>
+              <li><a href="/#services">Frontend Engineering</a></li>
+              <li><a href="/#services">AI Engineering</a></li>
+              <li><a href="/#services">Cloud &amp; DevOps</a></li>
               <li><a href="/contact/">Contact</a></li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Seagrace - Turn ideas into opportunities</span>
-          <span>Designed &amp; built in-house</span>
+          <span>© {new Date().getFullYear()} Seagrace - Software Engineering Initiative</span>
+          <span>Built through collaboration and knowledge sharing</span>
         </div>
       </div>
     </footer>

@@ -6,13 +6,14 @@ export default function Contact() {
       <div className="wrap">
         <div className="contact-grid">
           <aside className="contact-aside" data-reveal>
-            <div className="eyebrow" style={{ marginBottom: 24 }}>09 — Get in touch</div>
-            <h2>Let&apos;s build<br />something.</h2>
-            <p className="lead">Whether you&apos;ve got a product to ship or you want to build with us — start here. Real humans read every message.</p>
+            <div className="eyebrow" style={{ marginBottom: 24 }}>09 - Join Seagrace</div>
+            <h2>Join the<br />Initiative.</h2>
+            <p className="lead">Become part of a community focused on practical software engineering, collaborative projects, mentorship, and continuous learning.</p>
             <div className="clist">
-              <div className="row"><span className="ic">✦</span><div>Have an idea? <b>Start a project</b> and we&apos;ll scope it with you.</div></div>
-              <div className="row"><span className="ic">◇</span><div>Want to build with us? <b>Join the team.</b></div></div>
-              <div className="row"><span className="ic">◈</span><div>Prefer to chat first? <b>Ask Grace</b>, bottom-right.</div></div>
+              <div className="row"><span className="ic">01</span><div>Collaborate on <b>real-world engineering projects.</b></div></div>
+              <div className="row"><span className="ic">02</span><div>Learn <b>modern software engineering practices.</b></div></div>
+              <div className="row"><span className="ic">03</span><div>Work with a team using <b>industry workflows.</b></div></div>
+              <div className="row"><span className="ic">04</span><div>Grow through <b>mentorship and technical discussions.</b></div></div>
             </div>
           </aside>
           <div data-reveal data-delay="1">

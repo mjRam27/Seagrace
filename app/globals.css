@@ -486,6 +486,9 @@ html.capthru [data-reveal], html.capthru .reveal-clip > span { opacity: 1 !impor
   display: grid; place-items: center; flex-shrink: 0; }
 
 .form-card { border: 1px solid var(--line); border-radius: 22px; background: var(--card); padding: clamp(24px,3vw,38px); }
+.form-heading { margin-bottom: 24px; }
+.form-heading .em { display: block; font-family: var(--mono); font-size: 11px; color: var(--fg-mute); margin-bottom: 8px; }
+.form-heading h3 { font-size: clamp(24px,3vw,34px); line-height: 1.1; margin: 0; }
 .seg { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; background: var(--bg); border: 1px solid var(--line);
   border-radius: 13px; padding: 6px; margin-bottom: 30px; }
 .seg button { font-family: var(--body); font-weight: 600; font-size: 14.5px; padding: 13px; border-radius: 9px;

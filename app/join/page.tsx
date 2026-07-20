@@ -6,7 +6,7 @@ import Join from '@/components/sections/Join';
 export const metadata: Metadata = {
   title: 'Join - Seagrace',
   description:
-    'Join Seagrace as a learning platform for early-career builders seeking real-world software and IT experience.',
+    'Join Seagrace as a software engineering initiative for aspiring developers seeking practical industry experience.',
 };
 
 export default function JoinPage() {
@@ -16,9 +16,9 @@ export default function JoinPage() {
       <header className="page-hero" data-screen-label="Join Hero">
         <div className="wrap">
           <div className="eyebrow" data-reveal>Join Seagrace</div>
-          <h1 data-reveal data-delay="1">Your hub to start a career in software and IT.</h1>
+          <h1 data-reveal data-delay="1">Build practical software engineering experience.</h1>
           <p className="lead" data-reveal data-delay="2">
-            Gain valuable experience from real-world projects, learn from mentors and senior developers, explore the tech industry, and bring your unique ideas to life with industry standards.
+            Gain experience through collaborative engineering projects, mentorship, technical discussions, modern workflows, and knowledge sharing.
           </p>
         </div>
       </header>

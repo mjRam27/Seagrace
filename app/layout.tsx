@@ -5,14 +5,14 @@ import Chatbot from '@/components/Chatbot';
 import Interactions from '@/components/Interactions';
 
 export const metadata: Metadata = {
-  title: 'Seagrace — You imagine it. We build it.',
+  title: 'Seagrace - Software Engineering Initiative',
   description:
-    'Seagrace is a custom software studio. We design and engineer web & mobile products that turn ideas into opportunities.',
+    'Seagrace is a community-driven software engineering initiative helping aspiring developers gain practical industry experience through collaborative engineering projects, mentorship, and modern development practices.',
   metadataBase: new URL('https://yourdomain.com'),
   openGraph: {
-    title: 'Seagrace — You imagine it. We build it.',
+    title: 'Seagrace - Software Engineering Initiative',
     description:
-      'A custom software studio designing and engineering web & mobile products.',
+      'A community-driven software engineering initiative focused on practical experience, mentorship, collaboration, and modern engineering practices.',
     type: 'website',
   },
 };

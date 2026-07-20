@@ -14,9 +14,9 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const p = getProject(params.slug);
-  if (!p) return { title: 'Project — Seagrace' };
+  if (!p) return { title: 'Project - Seagrace' };
   return {
-    title: `${p.name} — Seagrace`,
+    title: `${p.name} - Seagrace`,
     description: p.lead,
   };
 }
@@ -35,9 +35,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <header className="proj-hero" data-screen-label={`${p.name} Hero`}>
         <div className="proj-hero__bg"></div>
         <div className="wrap" style={{ position: 'relative', zIndex: 2 }}>
-          <Link className="back-link" href="/#work"><span className="a">←</span> All work</Link>
+          <Link className="back-link" href="/#work"><span className="a">←</span> All projects</Link>
           <div className="proj-hero__top">
-            <span className="chip"><span className={p.status === 'Upcoming' ? 'dot' : 'dot live'}></span> {p.status || 'Live'}</span>
+            <span className="chip"><span className={p.status === 'Upcoming' ? 'dot' : 'dot live'}></span> {p.status || 'Active'}</span>
             <span className="chip">{p.category}</span>
             <span className="chip">{p.year}</span>
           </div>
@@ -45,7 +45,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <p className="proj-hero__lead lead" data-reveal data-delay="1">{p.lead}</p>
           <div className="proj-hero__cta" data-reveal data-delay="2">
             <a className="btn btn--lg" href={p.liveUrl} target="_blank" rel="noopener" data-magnetic>
-              Visit live site <span className="arr">↗</span>
+              View project <span className="arr">↗</span>
             </a>
             <span className="url-pill"><span className="dot"></span> <b>{p.liveLabel}</b></span>
           </div>
@@ -56,7 +56,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <section className="section section--tight" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <div className="proj-shot" data-reveal>
-            <span className="chip tag">Product overview</span>
+            <span className="chip tag">Project overview</span>
             <Media src={p.heroImage} label={`${p.name} hero screenshot`} />
           </div>
         </div>
@@ -71,10 +71,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <div className="row"><span className="k">Category</span><span className="v">{p.category}</span></div>
               <div className="row"><span className="k">Timeline</span><span className="v">{p.year}</span></div>
               <div className="row"><span className="k">Platform</span><span className="v">{p.meta.platform}</span></div>
-              <div className="row"><span className="k">Live at</span><span className="v soft">{p.liveLabel}</span></div>
+              <div className="row"><span className="k">Reference</span><span className="v soft">{p.liveLabel}</span></div>
             </aside>
             <div className="ov-body">
-              <div className="eyebrow" style={{ marginBottom: 22 }} data-reveal>The brief</div>
+              <div className="eyebrow" style={{ marginBottom: 22 }} data-reveal>Learning focus</div>
               <h2 data-reveal data-delay="1">{p.briefTitle}</h2>
               {p.brief.map((para, i) => (
                 <p key={i} data-reveal dangerouslySetInnerHTML={{ __html: para }} />
@@ -89,7 +89,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <div className="wrap">
           <div className="sec-head">
             <div className="sh-left">
-              <div className="eyebrow" data-reveal>What it does</div>
+              <div className="eyebrow" data-reveal>Engineering focus</div>
               <h2 className="h-sec" data-reveal data-delay="1" style={{ marginTop: 20 }}>{p.featuresTitle}</h2>
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <div className="eyebrow" data-reveal>Who built it</div>
               <h2 className="h-sec" data-reveal data-delay="1" style={{ marginTop: 20 }}>The {p.name} crew.</h2>
             </div>
-            <p className="lead" data-reveal data-delay="2" style={{ maxWidth: 340 }}>The people behind the build — and exactly what they owned.</p>
+            <p className="lead" data-reveal data-delay="2" style={{ maxWidth: 340 }}>The contributors behind the build and the engineering areas they owned.</p>
           </div>
           <div className="pteam-grid">
             {p.crew.map((c, i) => (

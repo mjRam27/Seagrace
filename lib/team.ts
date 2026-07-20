@@ -7,15 +7,15 @@ export type Member = {
 };
 
 export const team: Member[] = [
-  { name: 'Manoj Padmanabha', role: 'Founder & CEO', bio: "Steers vision, partnerships and the studio's relentless focus on craft.", photo: '/images/team/Manoj.png' },
-  { name: 'Vinith', role: 'Business Lead & Co-founder', bio: 'Leads business development, partnerships and the commercial strategy behind Seagrace.', photo: '/images/team/Vinith.png' },
-  { name: 'Arvind', role: 'Co-founder', bio: 'Full-stack builder - backend systems, APIs and the glue that holds it together.', photo: '/images/team/arvind.jpeg' },
-  { name: 'Adithya', role: 'CFO & Marketing', bio: 'Runs finance and growth - keeps the studio healthy and getting found.', photo: '/images/team/adithya.png' },
-  { name: 'Greeshma', role: 'Senior Software Engineer', bio: 'Ships robust features across the stack with deep care for quality.', photo: '/images/team/greeshma.png' },
+  { name: 'Manoj Padmanabha', role: 'Founder & Technical Lead', bio: 'Leads the technical vision, architecture discussions, mentorship, and engineering standards behind Seagrace.', photo: '/images/team/Manoj.png' },
+  { name: 'Vinith', role: 'Community & Operations Lead', bio: 'Supports community coordination, contributor operations, and the structure that keeps Seagrace learning-focused.', photo: '/images/team/Vinith.png' },
+  { name: 'Arvind', role: 'Co-founder', bio: 'Full-stack contributor focused on backend systems, APIs, and collaborative engineering practice.', photo: '/images/team/arvind.jpeg' },
+  { name: 'Adithya', role: 'Community Growth & Outreach', bio: 'Helps Seagrace reach aspiring developers and build stronger learning pathways.', photo: '/images/team/adithya.png' },
+  { name: 'Greeshma', role: 'Senior Software Engineer', bio: 'Mentors contributors and helps ship robust features across the stack with deep care for quality.', photo: '/images/team/greeshma.png' },
   // { name: 'Vishwa', role: 'Senior Fullstack Developer', bio: 'Owns features end to end - from the data layer to a polished UI.' },
-  { name: 'Durgesh', role: 'Data Engineer', bio: 'Builds the data pipelines and models that turn raw data into product fuel.', photo: '/images/team/durgesh.jpeg' },
-  { name: 'Srajanya', role: 'Associate Software Developer', bio: 'Product engineering with an eye for interface detail and clean UX.', photo: '/images/team/Srajanya.png' },
-  { name: 'Kamal', role: 'Associate Software Developer', bio: 'Builds and tests product features with care for reliability and user experience.', photo: '/images/team/kamal.jpeg' },
+  { name: 'Durgesh', role: 'Data Engineer', bio: 'Builds data pipelines and models while supporting contributors working with data systems.', photo: '/images/team/durgesh.jpeg' },
+  { name: 'Srajanya', role: 'Associate Software Developer', bio: 'Contributes to software engineering with an eye for interface detail and clean UX.', photo: '/images/team/Srajanya.png' },
+  { name: 'Kamal', role: 'Associate Software Developer', bio: 'Builds and tests software features with care for reliability and user experience.', photo: '/images/team/kamal.jpeg' },
   // { name: 'Amrutha', role: 'Junior Software Developer', bio: 'Builds dependable features end to end - and grows fast doing it.' },
-  { name: 'Vishal', role: 'Senior Consultant', bio: 'Advises on technical direction and keeps the bar high across every build.' },
+  { name: 'Vishal', role: 'Senior Technical Mentor', bio: 'Advises on technical direction, system architecture, and engineering quality across projects.' },
 ];

@@ -6,20 +6,21 @@ import Media from '@/components/Media';
 
 const manojProfile = {
   intro:
-    'Founder & CEO of Seagrace, software engineer, AI builder and product architect focused on turning ambitious ideas into real, shipped systems.',
+    'Founder & Technical Lead of Seagrace. Software Engineer with professional experience building high-scale backend systems, AI-powered applications, and full-stack platforms. Passionate about mentoring aspiring engineers and creating practical learning opportunities through collaborative software development.',
   philosophy:
-    'I believe the best way to grow as an engineer is by building. Over the years, I have worked across various domains, technologies and industries - not because I wanted to know a little about everything, but because I wanted to understand how real-world products are built. This journey helped me discover my passion for backend development, AI systems and cloud technologies, which are the areas I continue to focus on today.',
+    'I believe the best way to grow as an engineer is by building. Over the years, I have worked across various domains, technologies and industries - not because I wanted to know a little about everything, but because I wanted to understand how real-world software systems are built. This journey helped me discover my passion for backend development, AI systems and cloud technologies, which are the areas I continue to focus on today.',
   why:
-    'I started Seagrace because I wanted to create a place where real products, practical engineering and early-career learning meet. The goal is to build meaningful technology while giving builders the kind of real-world experience that changes careers.',
+    'I started Seagrace after realizing that many talented graduates struggle to gain practical software engineering experience despite strong academic foundations. My goal is to create a collaborative environment where aspiring engineers build production-style applications, learn modern engineering practices, receive mentorship, and experience how real software teams operate. Seagrace is about growing engineers through collaboration, ownership, and continuous learning - not just writing code.',
   vision:
-    'My vision is to grow Seagrace into a global technology company that builds impactful products, advances AI-driven innovation, and opens opportunities for the next generation of builders and problem solvers.',
+    'My vision is to grow Seagrace into a globally recognized software engineering initiative that empowers aspiring developers through practical experience, mentorship, collaboration, and modern engineering practices.',
   highlights: [
     'M.Sc. student at SRH University Heidelberg, March 2024 - March 2026.',
+    "Software Engineer - Cricbuzz (March 2021 - February 2024): Built and maintained high-scale backend systems for one of the world's leading cricket platforms, gaining professional experience in performance, reliability, APIs, and production engineering.",
     'Built Explorix originally as a thesis project, owning the idea, plan, architecture, design, backend, AI fine-tuning, RAG and cloud work.',
     'Internship experience at DeepInsightsX in Germany for 6 months, September 2024 - February 2025.',
     'Student Assistant at SRH from October 2025 - March 2026, building a university projects platform.',
-    'Freelance Guest Lecturer at SRH from April 15, 2026 - May 15, 2026, teaching software development and databases.',
-    'Software Engineer volunteer with TUM XR from May 1, 2026 - October 30, 2026, working around AR/VR.',
+    'Freelance Guest Lecturer at SRH in 2026, teaching software development and databases.',
+    'Software Engineer volunteer with TUM XR from 2026 - present, working around AR/VR.',
     'Part of AI Nexus Hub, building software for smart glasses.',
   ],
 };
@@ -48,7 +49,7 @@ export default function Team() {
             <div className="eyebrow" data-reveal>06 - The people</div>
             <h2 className="h-sec" data-reveal data-delay="1" style={{ marginTop: 22 }}>The builders<br />behind Seagrace.</h2>
           </div>
-          <p className="lead" data-reveal data-delay="2" style={{ maxWidth: 340 }}>A tight crew of designers and engineers who own what they ship.</p>
+            <p className="lead" data-reveal data-delay="2" style={{ maxWidth: 340 }}>A focused group of engineers, mentors, and contributors growing through shared ownership.</p>
         </div>
         <div className="team-grid">
           {team.map((m, i) => {
@@ -98,9 +99,9 @@ export default function Team() {
             </div>
             <div>
               <h4>You?</h4>
-              <div className="rl">We&apos;re hiring builders</div>
+              <div className="rl">Open to contributors</div>
             </div>
-            <p className="bio">Think you&apos;d fit? The door&apos;s open - say hello.</p>
+            <p className="bio">Want to learn, collaborate, and contribute? The door&apos;s open - say hello.</p>
           </a>
         </div>
       </div>

@@ -9,7 +9,7 @@ import Team from '@/components/sections/Team';
 export const metadata: Metadata = {
   title: 'About Us - Seagrace',
   description:
-    'Learn about Seagrace, our vision, mission, founder and the builders behind the studio.',
+    'Learn about Seagrace, our mission, vision, technical leadership, and the contributors behind the software engineering initiative.',
 };
 
 export default function AboutPage() {
@@ -21,7 +21,7 @@ export default function AboutPage() {
           <div className="eyebrow" data-reveal>About Us</div>
           <h1 data-reveal data-delay="1">The people and purpose behind Seagrace.</h1>
           <p className="lead" data-reveal data-delay="2">
-            We are building a technology company where client products, AI innovation and builder development grow together.
+            We are building an engineering initiative where practical learning, collaborative software development, mentorship, and knowledge sharing grow together.
           </p>
         </div>
       </header>
@@ -33,14 +33,14 @@ export default function AboutPage() {
               <div className="eyebrow">Vision</div>
               <h2>Where we are going.</h2>
               <p>
-                To become a global technology company that creates impactful products, advances innovation through artificial intelligence, and unlocks opportunities for the next generation of builders and problem solvers.
+                To become a globally recognized software engineering community that empowers aspiring developers through practical experience, collaboration, and continuous learning.
               </p>
             </article>
             <article className="vision-card feature" data-reveal data-delay="1">
               <div className="eyebrow">Mission</div>
-              <h2>What we execute every day.</h2>
+              <h2>What we practice every day.</h2>
               <p>
-                To transform bold ideas into scalable digital products, deliver exceptional technology solutions for our clients, and cultivate engineering talent through real-world execution, mentorship, and continuous learning.
+                Bridge the gap between education and industry by providing real-world software engineering experience through collaborative projects, mentorship, and modern engineering practices.
               </p>
             </article>
           </div>
