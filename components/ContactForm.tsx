@@ -2,19 +2,9 @@
 
 import { useState } from 'react';
 
-/*
- * Client contact mode is intentionally commented out so the application behaves
- * as if the client option does not exist, while keeping the old code restorable.
- *
- * type Mode = 'client' | 'join';
- */
-
 const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID || '';
 
 export default function ContactForm() {
-  /*
-   * const [mode, setMode] = useState<Mode>('client');
-   */
   const [errors, setErrors] = useState<Record<string, boolean>>({});
   const [sent, setSent] = useState(false);
   const [sentName, setSentName] = useState('there');
@@ -56,7 +46,7 @@ export default function ContactForm() {
           headers: { Accept: 'application/json' },
         });
       } catch {
-        /* Show success even if the demo endpoint request fails locally. */
+        /* Show success even if the request fails locally. */
       } finally {
         setSubmitting(false);
       }
@@ -73,7 +63,7 @@ export default function ContactForm() {
           <div className="ok">✓</div>
           <h3>Thanks, {sentName}!</h3>
           <p>
-            Thank you for your interest in joining Seagrace. We&apos;ll review your application and get back to you soon.
+            Your message is on its way. I&apos;ll get back to you soon.
             {!FORMSPREE_ID && <span style={{ opacity: 0.6 }}> (Demo form - set NEXT_PUBLIC_FORMSPREE_ID to deliver messages.)</span>}
           </p>
         </div>
@@ -84,22 +74,11 @@ export default function ContactForm() {
   return (
     <div className="form-card">
       <form id="contactForm" noValidate onSubmit={onSubmit}>
-        <input type="hidden" name="inquiry_type" value="Join the initiative" />
+        <input type="hidden" name="inquiry_type" value="Portfolio contact" />
         <div className="form-heading">
           <span className="em">01</span>
-          <h3>I want to join</h3>
+          <h3>Send me a message</h3>
         </div>
-        {/*
-        <input type="hidden" name="inquiry_type" value={mode === 'client' ? 'Client - project' : 'Join the team'} />
-        <div className="seg">
-          <button type="button" className={mode === 'client' ? 'active' : ''} onClick={() => setMode('client')}>
-            <span className="em">01</span> I&apos;m a client
-          </button>
-          <button type="button" className={mode === 'join' ? 'active' : ''} onClick={() => setMode('join')}>
-            <span className="em">02</span> I want to join
-          </button>
-        </div>
-        */}
 
         <div className="field row2">
           <div className={'field' + err('name')} style={{ margin: 0 }}>
@@ -114,70 +93,26 @@ export default function ContactForm() {
           </div>
         </div>
 
-        {/*
-        {mode === 'client' && (
-          <div className="dyn-fields show">
-            <div className="field">
-              <label>Company name or URL</label>
-              <input name="company" type="text" placeholder="Acme Inc. or acme.com" />
-            </div>
-            <div className={'field' + err('message')}>
-              <label>Tell us about it</label>
-              <textarea name="message" placeholder="What are you building, and what does success look like?" required></textarea>
-              <div className="msg">A few words, please</div>
-            </div>
-          </div>
-        )}
-        */}
-
         <div className="dyn-fields show">
           <div className="field">
-            <label>Current role / university</label>
-            <input name="current_role" type="text" placeholder="Computer Science Student" />
+            <label>Company / organisation (optional)</label>
+            <input name="company" type="text" placeholder="Acme Inc." />
           </div>
           <div className={'field' + err('message')}>
-            <label>Tell us about yourself</label>
+            <label>Message</label>
             <textarea
               name="message"
-              placeholder="Tell us about your background, interests, technologies you enjoy, projects you've built, and why you'd like to join Seagrace."
+              placeholder="Tell me about the role, project or idea you'd like to discuss."
               required
             ></textarea>
-            <div className="msg">Tell us a little about yourself</div>
+            <div className="msg">A few words, please</div>
           </div>
         </div>
 
-        {/*
-        {mode === 'join' && (
-          <div className="dyn-fields show">
-            <div className="field row2">
-              <div className="field" style={{ margin: 0 }}>
-                <label>Role you want</label>
-                <select name="role" defaultValue="Frontend Engineer">
-                  <option>Frontend Engineer</option><option>Backend Engineer</option><option>Full-stack Engineer</option>
-                  <option>Product Designer</option><option>AI / ML Engineer</option><option>Data Engineer</option><option>Internship</option>
-                </select>
-              </div>
-              <div className="field" style={{ margin: 0 }}>
-                <label>Portfolio / GitHub</label>
-                <input name="portfolio" type="text" placeholder="github.com/you" />
-              </div>
-            </div>
-            <div className={'field' + err('message')}>
-              <label>Why Seagrace?</label>
-              <textarea name="message" placeholder="Tell us what you're great at and what you'd love to build with us." required></textarea>
-              <div className="msg">Tell us a little about you</div>
-            </div>
-          </div>
-        )}
-        */}
-
         <div className="form-foot">
-          <span className="note">No spam. We reply within 1-2 days.</span>
+          <span className="note">I usually reply within 1-2 days.</span>
           <button className="btn btn--lg" type="submit" data-magnetic disabled={submitting}>
-            {/*
-            <span>{submitting ? 'Sending...' : mode === 'client' ? 'Send project brief' : 'Send application'}</span> <span className="arr">-&gt;</span>
-            */}
-            <span>{submitting ? 'Sending...' : 'Apply to Join'}</span> <span className="arr">-&gt;</span>
+            <span>{submitting ? 'Sending...' : 'Send message'}</span> <span className="arr">-&gt;</span>
           </button>
         </div>
       </form>

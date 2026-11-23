@@ -1,7 +1,7 @@
 export default function Strip() {
   const content = (
     <>
-      Building Practical Engineering Experience <i>✦</i> Mentorship <i>✦</i> Collaboration <i>✦</i> Software Engineering <i>✦</i> Knowledge Sharing <i>✦</i> Industry Practices <i>✦</i>&nbsp;
+      Backend Systems <i>✦</i> AI &amp; RAG <i>✦</i> Mobile Apps <i>✦</i> Realtime Systems <i>✦</i> Cloud &amp; DevOps <i>✦</i> System Design <i>✦</i>&nbsp;
     </>
   );
   return (

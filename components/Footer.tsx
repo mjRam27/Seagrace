@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { projects } from '@/lib/projects';
 
 export default function Footer() {
   return (
@@ -7,51 +8,50 @@ export default function Footer() {
         <div className="footer-top">
           <div className="footer-brand">
             <div className="brand">
-              <span className="mark">S</span> Seagrace
+              <span className="mark">M</span> Manoj Padmanabha
             </div>
             <div className="big">
-              Learn. Build.
+              Design. Build.
               <br />
-              Grow Together.
+              Ship.
             </div>
             <p>
-              Seagrace is a community-driven software engineering initiative helping aspiring developers gain practical experience through collaborative engineering projects, mentorship, and modern development practices.
+              Software engineer building backend systems, AI-powered applications and cloud platforms, from architecture to production.
             </p>
             <a className="btn btn--sm" href="/contact/" data-magnetic>
-              Join the Initiative <span className="arr">-&gt;</span>
+              Get in touch <span className="arr">-&gt;</span>
             </a>
           </div>
           <div>
-            <h4>Initiative</h4>
+            <h4>About</h4>
             <ul>
-              <li><a href="/about/">About Us</a></li>
-              <li><a href="/about/#culture">Culture</a></li>
-              <li><a href="/about/#team">Team</a></li>
-              <li><a href="/join/">Join</a></li>
+              <li><a href="/about/">About me</a></li>
+              <li><a href="/about/#experience">Experience</a></li>
+              <li><a href="/about/#culture">How I work</a></li>
+              <li><a href="/contact/">Contact</a></li>
             </ul>
           </div>
           <div>
             <h4>Projects</h4>
             <ul>
-              <li><Link href="/work/explorix/">Explorix</Link></li>
-              <li><Link href="/work/pickelton/">Pickelton</Link></li>
-              <li><a href="/#work">All projects</a></li>
+              {projects.map((p) => (
+                <li key={p.slug}><Link href={`/work/${p.slug}/`}>{p.name}</Link></li>
+              ))}
             </ul>
           </div>
           <div>
-            <h4>Domains</h4>
+            <h4>Skills</h4>
             <ul>
               <li><a href="/#services">Backend Engineering</a></li>
-              <li><a href="/#services">Frontend Engineering</a></li>
+              <li><a href="/#services">Frontend & Mobile</a></li>
               <li><a href="/#services">AI Engineering</a></li>
               <li><a href="/#services">Cloud &amp; DevOps</a></li>
-              <li><a href="/contact/">Contact</a></li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Seagrace - Software Engineering Initiative</span>
-          <span>Built through collaboration and knowledge sharing</span>
+          <span>© {new Date().getFullYear()} Manoj Padmanabha</span>
+          <span>Designed and built by me</span>
         </div>
       </div>
     </footer>

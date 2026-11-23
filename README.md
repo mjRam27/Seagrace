@@ -1,8 +1,8 @@
-# Seagrace - Next.js
+# Manoj Padmanabha - Portfolio
 
-The Seagrace software engineering initiative website, built with **Next.js (App Router) + TypeScript**, configured as a **static export** for **GitHub Pages**.
+My personal portfolio website, built with **Next.js (App Router) + TypeScript**, configured as a **static export** for **GitHub Pages**.
 
-> Learn. Build. Grow Together.
+> Design. Build. Ship.
 
 ---
 
@@ -22,7 +22,7 @@ Open http://localhost:3000
 npm run build
 ```
 
-This outputs a fully static site into `seagrace-nextjs/out/` because of `output: 'export'` in `next.config.mjs`.
+This outputs a fully static site into `out/` because of `output: 'export'` in `next.config.mjs`.
 
 ---
 
@@ -38,19 +38,20 @@ seagrace-nextjs/
 │  ├─ layout.tsx          # Root layout, chatbot, network bg, metadata
 │  ├─ page.tsx            # Homepage
 │  ├─ globals.css         # Design system
-│  └─ work/[slug]/page.tsx# Engineering project pages
+│  ├─ about/, contact/    # About me and contact pages
+│  └─ work/[slug]/page.tsx# Project pages
 ├─ components/
 │  ├─ Nav.tsx, Footer.tsx
 │  ├─ NetworkBg.tsx       # Live animated network/current background
-│  ├─ Chatbot.tsx         # Scripted "Grace" assistant
+│  ├─ Chatbot.tsx         # Scripted portfolio assistant
 │  ├─ Interactions.tsx    # Scroll reveals, counters, spotlight, nav state
-│  ├─ ContactForm.tsx     # Join initiative form
+│  ├─ ContactForm.tsx     # Contact form (Formspree)
 │  ├─ Media.tsx           # Image with styled placeholder fallback
-│  └─ sections/*.tsx      # Hero, About, Domains, Projects, Team, Join, etc.
-└─ lib/projects.ts        # Engineering project data
+│  └─ sections/*.tsx      # Hero, About, Profile, Skills, Projects, Contact, etc.
+└─ lib/projects.ts        # Project data
 ```
 
-## Adding an engineering project
+## Adding a project
 
 Add an entry to `lib/projects.ts`; the homepage card and `/work/<slug>/` page are generated from it.
 
@@ -61,6 +62,5 @@ Drop image files into `public/images/` and set the `src` on the relevant `<Media
 ## TODO before launch
 
 - [ ] Replace `public/CNAME` with your domain
-- [ ] Add project reference URLs in `lib/projects.ts`
-- [ ] Add team and project photos to `public/images/`
+- [ ] Add `liveUrl` in `lib/projects.ts` as more projects go live
 - [ ] Wire the contact form to a form endpoint by setting `NEXT_PUBLIC_FORMSPREE_ID`

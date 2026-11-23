@@ -246,6 +246,7 @@ html.capthru [data-reveal], html.capthru .reveal-clip > span { opacity: 1 !impor
   background-size: 72px 72px; mask-image: radial-gradient(circle at 50% 42%, #000, transparent 72%); }
 .hero__inner { position: relative; z-index: 2; max-width: 1040px; }
 .hero h1 { font-size: clamp(46px, 9vw, 134px); line-height: 1.0; letter-spacing: -0.035em; }
+.hero h1 .line { display: block; }
 .hero h1 .muted { color: rgba(255,255,255,0.30); }
 .hero__sub { margin: 30px auto 0; max-width: 560px; }
 .hero__cta { margin-top: 40px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
@@ -656,6 +657,23 @@ image-slot::part(empty) { gap: 9px; }
 .pmember__b .chips span { font-family: var(--mono); font-size: 10.5px; color: var(--fg-mute); border: 1px solid var(--line);
   border-radius: 100px; padding: 4px 9px; }
 
+/* single "my role" card on project pages */
+.pmember--solo { display: grid; grid-template-columns: 280px 1fr; max-width: 920px; }
+.pmember--solo .pmember__ph { aspect-ratio: auto; min-height: 260px; border-bottom: 0; border-right: 1px solid var(--line); }
+.pmember--solo .pmember__b { padding: clamp(24px,3vw,36px); align-self: center; }
+.pmember--solo .pmember__b .did { font-size: 15.5px; }
+@media (max-width: 700px) {
+  .pmember--solo { grid-template-columns: 1fr; }
+  .pmember--solo .pmember__ph { aspect-ratio: 5/4; border-right: 0; border-bottom: 1px solid var(--line); }
+}
+
+/* about page profile */
+.exp-list { list-style: none; display: grid; gap: 14px; }
+.exp-list li { position: relative; padding: 18px 20px 18px 44px; border: 1px solid var(--line); border-radius: 14px;
+  background: var(--bg-2); color: var(--fg-soft); font-size: 15px; line-height: 1.6; }
+.exp-list li::before { content: ''; position: absolute; left: 20px; top: 1.6em; width: 7px; height: 7px; border-radius: 50%; background: var(--fg-mute); }
+.exp-list li b { color: var(--fg); font-weight: 600; }
+
 /* next project / cta */
 .proj-cta { border-top: 1px solid var(--line); }
 .next-proj { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: clamp(40px,6vw,72px) 0;
@@ -691,30 +709,6 @@ image-slot::part(empty) { gap: 9px; }
 .member__ph .media-img[alt="Manoj Padmanabha"], .pmember__ph .media-img[alt="Manoj Padmanabha"] {
   object-position: center 14%;
   transform: scale(1.08);
-}
-.member__ph .media-img[alt="Vishal"], .pmember__ph .media-img[alt="Vishal"] {
-  object-position: center 9%;
-}
-.member__ph .media-img[alt="Vinith"], .pmember__ph .media-img[alt="Vinith"] {
-  object-position: center 12%;
-  transform: scale(1.12);
-}
-.member__ph .media-img[alt="Kamal"], .pmember__ph .media-img[alt="Kamal"] {
-  object-position: center 13%;
-  transform: scale(1.08);
-}
-.member__ph .media-img[alt="Arvind"], .pmember__ph .media-img[alt="Arvind"],
-.member__ph .media-img[alt="Durgesh"], .pmember__ph .media-img[alt="Durgesh"],
-.member__ph .media-img[alt="Srajanya"], .pmember__ph .media-img[alt="Srajanya"] {
-  object-position: center 13%;
-}
-.member__ph .media-img[alt="Adithya"] {
-  object-position: center 12%;
-  transform: scale(1.08);
-}
-.member__ph .media-img[alt="Greeshma"] {
-  object-position: center 16%;
-  transform: scale(1.12);
 }
 .ceo__photo .media-img, .member__ph .media-img, .proj__media .media-img,
 .proj-shot .media-img, .gallery .g .media-img, .pmember__ph .media-img { position:absolute; inset:0; }

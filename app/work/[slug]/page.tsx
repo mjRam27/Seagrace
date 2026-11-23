@@ -14,9 +14,9 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const p = getProject(params.slug);
-  if (!p) return { title: 'Project - Seagrace' };
+  if (!p) return { title: 'Project - Manoj Padmanabha' };
   return {
-    title: `${p.name} - Seagrace`,
+    title: `${p.name} - Manoj Padmanabha`,
     description: p.lead,
   };
 }
@@ -25,7 +25,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   const p = getProject(params.slug);
   if (!p) notFound();
 
-  const next = projects.find((x) => x.slug !== p.slug) || p;
+  const next = projects[(projects.findIndex((x) => x.slug === p.slug) + 1) % projects.length];
 
   return (
     <>
@@ -37,18 +37,20 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <div className="wrap" style={{ position: 'relative', zIndex: 2 }}>
           <Link className="back-link" href="/#work"><span className="a">←</span> All projects</Link>
           <div className="proj-hero__top">
-            <span className="chip"><span className={p.status === 'Upcoming' ? 'dot' : 'dot live'}></span> {p.status || 'Active'}</span>
+            <span className="chip"><span className={p.status === 'Live' ? 'dot live' : 'dot'}></span> {p.status}</span>
             <span className="chip">{p.category}</span>
             <span className="chip">{p.year}</span>
           </div>
           <h1 data-reveal>{p.name}</h1>
           <p className="proj-hero__lead lead" data-reveal data-delay="1">{p.lead}</p>
-          <div className="proj-hero__cta" data-reveal data-delay="2">
-            <a className="btn btn--lg" href={p.liveUrl} target="_blank" rel="noopener" data-magnetic>
-              View project <span className="arr">↗</span>
-            </a>
-            <span className="url-pill"><span className="dot"></span> <b>{p.liveLabel}</b></span>
-          </div>
+          {p.liveUrl && (
+            <div className="proj-hero__cta" data-reveal data-delay="2">
+              <a className="btn btn--lg" href={p.liveUrl} target="_blank" rel="noopener noreferrer" data-magnetic>
+                Visit live site <span className="arr">↗</span>
+              </a>
+              <span className="url-pill"><span className="dot live"></span> <b>{p.liveLabel}</b></span>
+            </div>
+          )}
         </div>
       </header>
 
@@ -71,10 +73,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <div className="row"><span className="k">Category</span><span className="v">{p.category}</span></div>
               <div className="row"><span className="k">Timeline</span><span className="v">{p.year}</span></div>
               <div className="row"><span className="k">Platform</span><span className="v">{p.meta.platform}</span></div>
-              <div className="row"><span className="k">Reference</span><span className="v soft">{p.liveLabel}</span></div>
+              <div className="row"><span className="k">Status</span><span className="v soft">{p.liveUrl ? <a href={p.liveUrl} target="_blank" rel="noopener noreferrer">Live at {p.liveLabel} ↗</a> : p.status}</span></div>
             </aside>
             <div className="ov-body">
-              <div className="eyebrow" style={{ marginBottom: 22 }} data-reveal>Learning focus</div>
+              <div className="eyebrow" style={{ marginBottom: 22 }} data-reveal>Overview</div>
               <h2 data-reveal data-delay="1">{p.briefTitle}</h2>
               {p.brief.map((para, i) => (
                 <p key={i} data-reveal dangerouslySetInnerHTML={{ __html: para }} />
@@ -89,7 +91,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <div className="wrap">
           <div className="sec-head">
             <div className="sh-left">
-              <div className="eyebrow" data-reveal>Engineering focus</div>
+              <div className="eyebrow" data-reveal>Features</div>
               <h2 className="h-sec" data-reveal data-delay="1" style={{ marginTop: 20 }}>{p.featuresTitle}</h2>
             </div>
           </div>
@@ -109,6 +111,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       </section>
 
       {/* STACK */}
+      {p.stack.length > 0 && (
       <section className="section section--tight" data-screen-label={`${p.name} Stack`}>
         <div className="wrap">
           <div className="sec-head">
@@ -127,6 +130,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </section>
+      )}
 
       {/* GALLERY */}
       <section className="section" data-screen-label={`${p.name} Gallery`}>
@@ -146,29 +150,24 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      {/* CREW */}
-      <section className="section" data-screen-label={`${p.name} Team`}>
+      {/* MY ROLE */}
+      <section className="section" data-screen-label={`${p.name} My role`}>
         <div className="wrap">
           <div className="sec-head">
             <div className="sh-left">
               <div className="eyebrow" data-reveal>Who built it</div>
-              <h2 className="h-sec" data-reveal data-delay="1" style={{ marginTop: 20 }}>The {p.name} crew.</h2>
+              <h2 className="h-sec" data-reveal data-delay="1" style={{ marginTop: 20 }}>My role.</h2>
             </div>
-            <p className="lead" data-reveal data-delay="2" style={{ maxWidth: 340 }}>The contributors behind the build and the engineering areas they owned.</p>
           </div>
-          <div className="pteam-grid">
-            {p.crew.map((c, i) => (
-              <article className="pmember" data-reveal data-delay={String(i % 3)} key={c.name}>
-                <div className="pmember__ph"><Media src={c.photo} label={c.name} alt={c.name} /></div>
-                <div className="pmember__b">
-                  <div className="nm">{c.name}</div>
-                  <div className="rl">{c.role}</div>
-                  <p className="did">{c.did}</p>
-                  <div className="chips">{c.chips.map((ch) => <span key={ch}>{ch}</span>)}</div>
-                </div>
-              </article>
-            ))}
-          </div>
+          <article className="pmember pmember--solo" data-reveal>
+            <div className="pmember__ph"><Media src="/images/manoj.png" label="Manoj Padmanabha" alt="Manoj Padmanabha" /></div>
+            <div className="pmember__b">
+              <div className="nm">Manoj Padmanabha</div>
+              <div className="rl">{p.meta.role}</div>
+              <p className="did">{p.myRole.summary}</p>
+              <div className="chips">{p.myRole.chips.map((ch) => <span key={ch}>{ch}</span>)}</div>
+            </div>
+          </article>
         </div>
       </section>
 

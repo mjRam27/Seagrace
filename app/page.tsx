@@ -7,8 +7,6 @@ import Stats from '@/components/sections/Stats';
 import Services from '@/components/sections/Services';
 import Culture from '@/components/sections/Culture';
 import Work from '@/components/sections/Work';
-// Testimonials are intentionally commented out so the section can be restored later.
-// import Testimonials from '@/components/sections/Testimonials';
 
 export default function Home() {
   return (
@@ -21,7 +19,6 @@ export default function Home() {
       <Services />
       <Culture />
       <Work />
-      {/* <Testimonials /> */}
       <Footer />
     </>
   );

@@ -6,125 +6,73 @@ type Msg = { who: 'bot' | 'user'; text: string };
 
 const KB: { k: string[]; a: string }[] = [
   {
-    k: ['what is sea grace', 'what is seagrace', 'about sea grace', 'about seagrace', 'company'],
-    a: '<b>Sea Grace</b> is a community-driven software engineering initiative helping aspiring developers gain practical industry experience through collaborative engineering projects, mentorship, leadership, and modern development practices.',
+    k: ['who is manoj', 'who are you', 'about manoj', 'about you', 'manoj', 'introduce'],
+    a: '<b>Manoj Padmanabha</b> is a software engineer who designs and builds backend systems, AI-powered applications and full-stack platforms end to end. Every project on this site was built by him.',
   },
   {
-    k: ['what does sea grace do', 'what do you do', 'services', 'offer', 'capabilities', 'build', 'make'],
-    a: 'We create collaborative engineering projects and learning tracks across <b>backend engineering</b>, <b>frontend engineering</b>, <b>cloud and DevOps</b>, <b>AI engineering</b>, <b>system design</b>, databases, architecture, and professional workflows.',
+    k: ['experience', 'cricbuzz', 'background', 'worked', 'career history', 'resume', 'cv'],
+    a: 'Manoj spent three years (2021-2024) as a Software Engineer at <b>Cricbuzz</b>, building high-scale backend systems. He then did an M.Sc. at SRH University Heidelberg, interned at DeepInsightsX, worked as a Student Assistant and Guest Lecturer at SRH, and volunteers as a software engineer with TUM XR. See the <b>About</b> page for details.',
   },
   {
-    k: ['different', 'why choose', 'special', 'unique', 'what makes'],
-    a: 'Seagrace focuses on practical learning through real engineering work. Contributors learn by building, receiving code review, discussing architecture, and working with modern tools and team workflows.',
+    k: ['education', 'degree', 'university', 'masters', 'm.sc', 'msc', 'study', 'srh', 'thesis'],
+    a: 'Manoj completed an <b>M.Sc. at SRH University Heidelberg</b> (2024-2026). His thesis project was <b>Explorix</b>, which is now live.',
   },
   {
-    k: ['startup', 'startups', 'non technical', 'non-technical', 'founder', 'founders', 'idea'],
-    a: 'Seagrace is an engineering initiative where contributors practice turning ideas into structured technical projects, architecture plans, prototypes, and learning outcomes.',
-  },
-  {
-    k: ['industry', 'industries', 'domain', 'sectors'],
-    a: 'Our projects explore domains such as AI, travel, sports technology, career technology, realtime systems, cloud architecture, databases, and applied automation as learning contexts.',
-  },
-  {
-    k: ['vision'],
-    a: 'Our vision is to become a globally recognized software engineering community that empowers aspiring developers through practical experience, collaboration, and continuous learning.',
-  },
-  {
-    k: ['mission'],
-    a: 'Our mission is to bridge the gap between education and industry by providing real-world software engineering experience through collaborative projects, mentorship, and modern engineering practices.',
-  },
-  {
-    k: ['team', 'who are you', 'people', 'staff', 'employee', 'leadership', 'manoj'],
-    a: 'Sea Grace is led by <b>Manoj Padmanabha</b>, Founder & Technical Lead, with community, operations, engineering and mentorship contributors supporting the initiative. You can meet the team on the <b>About Us</b> page.',
-  },
-  {
-    k: ['explorix', 'travel'],
-    a: '<b>Explorix</b> is an AI travel engineering project where contributors practice mobile architecture, geospatial search, backend APIs, RAG, and conversational AI workflows.',
-  },
-  {
-    k: ['pickelton', 'sport', 'pickle', 'pickleball', 'badminton', 'tournament', 'scoring'],
-    a: '<b>Pickelton</b> is a realtime sports engineering project for web, mobile, authentication, live scoring, Redis caching, WebSockets, leaderboards, analytics, and streaming architecture.',
-  },
-  {
-    k: ['tradex', 'trading', 'fintech', 'tradingview', 'broker', 'market data'],
-    a: '<b>Tradex</b> is an upcoming AI engineering project exploring strategy workflows, market data, FastAPI automation, analytics, risk, Redis, PostgreSQL, and machine learning signals.',
-  },
-  {
-    k: ['ascenjo', 'career', 'job search', 'resume', 'cover letter', 'ats', 'job application'],
-    a: '<b>Ascenjo</b> is an upcoming AI career engineering project for semantic matching, resume workflows, browser agents, application tracking, pgvector, Redis, and cloud architecture.',
-  },
-  {
-    k: ['project', 'work', 'portfolio', 'case study', 'case studies', 'built'],
-    a: 'The projects section showcases collaborative engineering projects such as <b>Explorix</b> and <b>Pickelton</b>, plus upcoming projects like <b>Tradex</b> and <b>Ascenjo</b>. Each one highlights technology, architecture, teamwork, and contributor learning.',
-  },
-  {
-    k: ['join and learn', 'join learn', 'internship program', 'learning program', 'join program'],
-    a: 'The <b>Join & Learn</b> path helps aspiring developers, students and graduates gain practical experience by contributing to engineering projects under mentorship.',
-  },
-  {
-    k: ['is the program paid', 'paid internship', 'stipend', 'compensation'],
-    a: 'The initiative primarily focuses on mentorship, practical experience, portfolio development and professional growth. Any future opportunities will be communicated clearly as the community evolves.',
-  },
-  {
-    k: ['certificate', 'internship certificate'],
-    a: 'Participants who successfully complete a structured contribution period may receive recognition for their contributions and achievements.',
-  },
-  {
-    k: ['reference', 'recommendation', 'professional reference'],
-    a: 'Based on performance and contribution, participants may receive professional references or recommendations.',
-  },
-  {
-    k: ['prove my experience', 'proof of work', 'portfolio proof', 'showcase'],
-    a: 'Whenever possible, completed projects are showcased with project details and contributor recognition, giving participants verifiable proof of practical engineering experience.',
-  },
-  {
-    k: ['beginner', 'beginners', 'fresh graduate', 'student', 'career changer', 'can beginners apply'],
-    a: 'Yes. We welcome motivated students, fresh graduates, career switchers and aspiring developers who are eager to learn, contribute and collaborate.',
-  },
-  {
-    k: ['selection process', 'how to apply', 'application process', 'onboarding'],
-    a: 'Our selection process focuses on motivation, potential and willingness to learn.\n\n<b>1.</b> Application review\n<b>2.</b> Introduction call\n<b>3.</b> Technical discussion\n<b>4.</b> Community onboarding',
-  },
-  {
-    k: ['coding interview', 'coding round', 'technical interview'],
-    a: 'We focus on technical understanding, problem-solving ability, motivation and learning mindset rather than competitive coding rounds.',
-  },
-  {
-    k: ['how long is the internship', 'internship duration', 'duration', 'three months'],
-    a: 'Contribution timelines depend on project needs, learning goals and participant availability.',
-  },
-  {
-    k: ['remote', 'location', 'where are you located', 'office', 'based'],
-    a: 'Sea Grace works as a remote-friendly software engineering community. Most collaboration is flexible and async-friendly.',
+    k: ['skills', 'what do you do', 'services', 'capabilities', 'specialise', 'specialize', 'good at'],
+    a: 'Manoj works across <b>backend engineering</b>, <b>frontend & mobile</b>, <b>AI engineering</b> (LLMs, RAG, fine-tuning) and <b>cloud & DevOps</b>. Backend, AI and cloud are where he goes deepest.',
   },
   {
     k: ['technologies', 'tech stack', 'stack', 'technology', 'framework', 'language'],
-    a: 'Depending on the project, participants may work with frontend technologies, backend systems, databases, cloud platforms, DevOps tools, AI frameworks, testing tools and deployment pipelines.\n\nRecent stacks include React, Next.js, FastAPI, Spring Boot, PostgreSQL, Redis and WebSockets.',
+    a: 'Recent stacks include React, Next.js, React Native, FastAPI, Java 21, Golang, NestJS, PostgreSQL + PostGIS, pgvector, Redis, MongoDB, WebSockets, Llama 3.2 with LoRA and RAG, plus AWS and GCP.',
   },
   {
-    k: ['junior developer', 'junior role', 'developer role', 'engineering opportunity', 'job', 'career', 'hire me', 'apply', 'vacancy', 'intern', 'learn', 'volunteer', 'contribute', 'grow'],
-    a: 'Yes. We welcome motivated people seeking practical software engineering experience. Use the <b>Join</b> page to learn more, then apply through the contact form.',
+    k: ['explorix', 'travel', 'live', 'deployed'],
+    a: '<b>Explorix</b> is an AI travel app Manoj built end to end and it is <b>live at <a href="https://explorix.app" target="_blank" rel="noopener noreferrer">explorix.app</a></b>. It has a React Native app, FastAPI backend, PostGIS geospatial search and a fine-tuned Llama 3.2 assistant grounded with RAG.',
+  },
+  {
+    k: ['studywidbuddy', 'study with buddy', 'studywid', 'buddy', 'study partner', 'edtech', 'learning platform'],
+    a: '<b>StudywidBuddy</b> is a learning platform Manoj is building: study with a matched buddy in a shared workspace, get help from a context-aware AI Buddy, practise on debugging exercises, join team projects and see skill-matched jobs.',
+  },
+  {
+    k: ['pickelton', 'sport', 'pickle', 'pickleball', 'badminton', 'tournament', 'scoring'],
+    a: '<b>Pickelton</b> is a realtime sports platform Manoj is building for web and mobile: live scoring over WebSockets, Redis-powered leaderboards, tournaments and a Golang live-streaming service.',
+  },
+  {
+    k: ['tradex', 'trading', 'fintech', 'tradingview', 'broker', 'market data'],
+    a: '<b>Tradex</b> is an upcoming AI trading platform Manoj is designing, with strategy automation, FastAPI services, ML signal validation, Redis, PostgreSQL and GCP.',
+  },
+  {
+    k: ['ascenjo', 'job search', 'cover letter', 'ats', 'job application'],
+    a: '<b>Ascenjo</b> is an upcoming AI career platform Manoj is designing, with semantic job matching on pgvector, resume tooling, Playwright browser agents and AWS architecture.',
+  },
+  {
+    k: ['project', 'work', 'portfolio', 'case study', 'case studies', 'built'],
+    a: 'Manoj has built five projects: <b>Explorix</b> (live), <b>StudywidBuddy</b> and <b>Pickelton</b> (in development), and the upcoming <b>Tradex</b> and <b>Ascenjo</b>. Each one is designed and built by him. Open any of them from the Projects section.',
+  },
+  {
+    k: ['hire', 'job', 'role', 'available', 'opportunity', 'freelance', 'collaborate', 'work with'],
+    a: 'Manoj is open to software engineering roles and collaborations. The best way to reach him is the <b>Contact</b> page.',
+  },
+  {
+    k: ['location', 'where', 'based', 'country', 'germany'],
+    a: 'Manoj is based in <b>Germany</b>.',
   },
   {
     k: ['contact', 'email', 'reach', 'talk', 'call', 'get in touch'],
-    a: 'To join the initiative or ask about contributing, use the <b>Contact</b> page. You can also reach Sea Grace at <b>info@seagrace.tech</b>.',
-  },
-  {
-    k: ['response time', 'how quickly', 'reply', 'respond'],
-    a: 'We aim to respond to applications and questions within 24-48 business hours.',
+    a: 'You can reach Manoj through the form on the <b>Contact</b> page. He usually replies within 1-2 days.',
   },
   {
     k: ['hi', 'hello', 'hey', 'yo', 'greet', 'sup'],
-    a: "Hey! I'm Grace, Sea Grace's assistant. I can tell you about the initiative, engineering projects, team, Join & Learn path, or how to apply.",
+    a: "Hey! I can tell you about Manoj's experience, skills, projects, or how to get in touch.",
   },
   {
     k: ['thank', 'thanks', 'cheers', 'great', 'awesome', 'cool'],
-    a: "Anytime. If you're ready to take the next step, head to the Contact page or keep the questions coming.",
+    a: 'Anytime. If you want to talk to Manoj directly, head to the Contact page.',
   },
 ];
 
 const FALLBACK =
-  "Good question. I'm a scripted demo assistant, so I may not have that exact answer yet. I can help with <b>the initiative</b>, <b>engineering projects</b>, <b>team</b>, <b>Join & Learn</b>, <b>mentorship</b>, <b>technologies</b>, or <b>contact</b>.";
+  "Good question. I'm a scripted assistant, so I may not have that exact answer. I can help with Manoj's <b>experience</b>, <b>skills</b>, <b>projects</b>, <b>tech stack</b>, or how to <b>get in touch</b>.";
 
 function answer(q: string) {
   const s = q.toLowerCase();
@@ -143,7 +91,7 @@ function answer(q: string) {
   return best || FALLBACK;
 }
 
-const QUICK = ['What is Sea Grace?', 'Engineering Projects', 'Join & Learn', 'How do I apply?'];
+const QUICK = ['Who is Manoj?', 'Projects', 'Experience', 'How do I get in touch?'];
 
 export default function Chatbot() {
   const [mounted, setMounted] = useState(false);
@@ -185,7 +133,7 @@ export default function Chatbot() {
     setOpen(true);
     if (!greeted) {
       setGreeted(true);
-      botReply("Hi, I'm <b>Grace</b>, Sea Grace's assistant. Ask me about the initiative, engineering projects, team, Join & Learn path, or how to apply.");
+      botReply("Hi! I'm Manoj's portfolio assistant. Ask me about his experience, skills, projects, or how to get in touch.");
     }
     window.setTimeout(() => inputRef.current?.focus(), 350);
   }
@@ -203,15 +151,15 @@ export default function Chatbot() {
   return (
     <>
       <button className={'sg-launch' + (open ? ' hide' : '')} onClick={openPanel}>
-        <span className="av">G</span> Ask Grace
+        <span className="av">M</span> Ask about me
       </button>
 
       <div className={'sg-panel' + (open ? ' open' : '')}>
         <div className="sg-head">
-          <div className="av">G</div>
+          <div className="av">M</div>
           <div className="meta">
-            <b>Grace</b>
-            <span>Sea Grace assistant - online</span>
+            <b>Portfolio assistant</b>
+            <span>Ask about Manoj - online</span>
           </div>
           <button className="sg-close" aria-label="Close" onClick={() => setOpen(false)}>x</button>
         </div>
@@ -233,13 +181,13 @@ export default function Chatbot() {
           </div>
         )}
 
-        <div className="sg-disc">Scripted demo assistant</div>
+        <div className="sg-disc">Scripted assistant</div>
 
         <div className="sg-foot">
           <input
             ref={inputRef}
             type="text"
-            placeholder="Ask about Sea Grace..."
+            placeholder="Ask about Manoj..."
             autoComplete="off"
             value={input}
             onChange={(e) => setInput(e.target.value)}

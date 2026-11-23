@@ -5,14 +5,14 @@ import Chatbot from '@/components/Chatbot';
 import Interactions from '@/components/Interactions';
 
 export const metadata: Metadata = {
-  title: 'Seagrace - Software Engineering Initiative',
+  title: 'Manoj Padmanabha - Software Engineer',
   description:
-    'Seagrace is a community-driven software engineering initiative helping aspiring developers gain practical industry experience through collaborative engineering projects, mentorship, and modern development practices.',
+    'Portfolio of Manoj Padmanabha, a software engineer building backend systems, AI-powered applications and cloud platforms. Projects include Explorix, Pickelton, Tradex and Ascenjo.',
   metadataBase: new URL('https://yourdomain.com'),
   openGraph: {
-    title: 'Seagrace - Software Engineering Initiative',
+    title: 'Manoj Padmanabha - Software Engineer',
     description:
-      'A community-driven software engineering initiative focused on practical experience, mentorship, collaboration, and modern engineering practices.',
+      'Backend, AI and cloud engineer. Explore the projects I have designed, built and shipped.',
     type: 'website',
   },
 };

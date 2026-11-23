@@ -6,14 +6,14 @@ export default function Contact() {
       <div className="wrap">
         <div className="contact-grid">
           <aside className="contact-aside" data-reveal>
-            <div className="eyebrow" style={{ marginBottom: 24 }}>09 - Join Seagrace</div>
-            <h2>Join the<br />Initiative.</h2>
-            <p className="lead">Become part of a community focused on practical software engineering, collaborative projects, mentorship, and continuous learning.</p>
+            <div className="eyebrow" style={{ marginBottom: 24 }}>Contact</div>
+            <h2>Let&apos;s<br />talk.</h2>
+            <p className="lead">Have a role, a project or an idea you want to discuss? Send me a message and I&apos;ll get back to you.</p>
             <div className="clist">
-              <div className="row"><span className="ic">01</span><div>Collaborate on <b>real-world engineering projects.</b></div></div>
-              <div className="row"><span className="ic">02</span><div>Learn <b>modern software engineering practices.</b></div></div>
-              <div className="row"><span className="ic">03</span><div>Work with a team using <b>industry workflows.</b></div></div>
-              <div className="row"><span className="ic">04</span><div>Grow through <b>mentorship and technical discussions.</b></div></div>
+              <div className="row"><span className="ic">01</span><div>Open to <b>software engineering roles.</b></div></div>
+              <div className="row"><span className="ic">02</span><div>Happy to talk <b>backend, AI and cloud.</b></div></div>
+              <div className="row"><span className="ic">03</span><div>Questions about <b>any of my projects.</b></div></div>
+              <div className="row"><span className="ic">04</span><div>Freelance and <b>collaboration ideas.</b></div></div>
             </div>
           </aside>
           <div data-reveal data-delay="1">
